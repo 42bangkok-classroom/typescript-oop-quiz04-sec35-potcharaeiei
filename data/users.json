@@ -61,12 +61,5 @@
     "lastName": "สว่างใส",
     "email": "arun.sawangsi@example.com",
     "username": "arun_s"
-  },
-  {
-    "id": "10",
-    "firstName": "ปิยะ",
-    "lastName": "รุ่งเรือง",
-    "email": "piya.rungruang@example.com",
-    "username": "piya_r"
   }
 ]
