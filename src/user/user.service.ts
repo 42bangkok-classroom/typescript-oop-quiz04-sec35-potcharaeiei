@@ -8,12 +8,12 @@ export class UserService {
   test(): any[] {
     return [];
   }
-  private users: IUser [] ;
+  private users: IUser[];
 
   constructor() {
-    const filePath = join(process.cwd(),'data', 'users.json');
+    const filePath = join(process.cwd(), 'data', 'users.json');
     const data = readFileSync(filePath, 'utf-8');
-    this.users = JSON.parse(data);
+    this.users = JSON.parse(data) as IUser[];
   }
   findAll(): IUser[] {
     return this.users;
