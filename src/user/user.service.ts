@@ -25,9 +25,13 @@ export class UserService {
       throw new NotFoundException('User not found');
     }
 
-    // ✅ ไม่มี fields → return ทั้ง object
-    if (!fields || fields.length === 0) {
+    if (!fields) {
       return user;
+    }
+
+    // ❌ fields = [] → ต้อง return {}
+    if (fields.length === 0) {
+      return {};
     }
 
     // ✅ filter fields
