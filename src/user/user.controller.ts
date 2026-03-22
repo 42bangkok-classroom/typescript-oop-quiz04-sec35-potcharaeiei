@@ -1,7 +1,14 @@
-import { Controller, Get, Param, Query, Body, Post, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Query,
+  Body,
+  Post,
+  ValidationPipe,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
-
 
 @Controller('users') //P03
 export class UserController {
@@ -23,7 +30,7 @@ export class UserController {
     return this.userService.findOne(id, fieldArray);
   }
 
-  @Post()//P05
+  @Post() //P05
   create(@Body(new ValidationPipe()) dto: CreateUserDto) {
     return this.userService.create(dto);
   }

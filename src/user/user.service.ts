@@ -48,13 +48,14 @@ export class UserService {
   }
 
   //P05 generate id ใหม่
-  create(dto: CreateUserDto){
-    const newId =
-      (Math.max(...this.users.map(u => Number(u.id))) + 1).toString();
+  create(dto: CreateUserDto) {
+    const newId = (
+      Math.max(...this.users.map((u) => Number(u.id))) + 1
+    ).toString();
 
-    const newUser ={
+    const newUser = {
       id: newId,
-      ...dto
+      ...dto,
     };
     //P05 เพิ่ม user ใหม่ลงใน array
     this.users.push(newUser);
@@ -62,7 +63,7 @@ export class UserService {
     const filePath = join(process.cwd(), 'data', 'users.json');
     writeFileSync(filePath, JSON.stringify(this.users, null, 2));
 
-  return newUser;
+    return newUser;
 
     return newUser;
   }
