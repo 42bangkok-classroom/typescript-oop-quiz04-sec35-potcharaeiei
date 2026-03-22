@@ -14,23 +14,23 @@ import { CreateUserDto } from './dto/create-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('test') //P02
+  @Get('test') //P02 
   test(): any[] {
     return this.userService.test();
   }
 
-  @Get() //P03
+  @Get() //P03 
   findAll() {
     return this.userService.findAll();
   }
-
+  //P04 เพิ่ม endpoint GET /users/:id?fields=firstName,email
   @Get(':id')
   findOne(@Param('id') id: string, @Query('fields') fields?: string) {
     const fieldArray = fields ? fields.split(',') : undefined;
     return this.userService.findOne(id, fieldArray);
   }
 
-  @Post() //P05
+  @Post() //P05 เพิ่ม endpoint POST /users
   create(@Body(new ValidationPipe()) dto: CreateUserDto) {
     return this.userService.create(dto);
   }

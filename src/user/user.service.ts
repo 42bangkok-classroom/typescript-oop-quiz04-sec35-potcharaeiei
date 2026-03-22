@@ -21,7 +21,7 @@ export class UserService {
   findOne(id: string, fields?: string[]): Partial<IUser> {
     const user = this.users.find((u) => String(u.id) === String(id));
 
-    // ❌ ไม่เจอ → ต้องใช้ NotFoundException
+    // ไม่เจอ → ต้องใช้ NotFoundException
     if (!user) {
       throw new NotFoundException('User not found');
     }
@@ -30,7 +30,7 @@ export class UserService {
       return user;
     }
 
-    // ❌ fields = [] → ต้อง return {}
+    // fields = [] → ต้อง return {}
     if (fields.length === 0) {
       return {};
     }
@@ -65,7 +65,6 @@ export class UserService {
 
     return newUser;
 
-    return newUser;
   }
 
   findAll(): IUser[] {
