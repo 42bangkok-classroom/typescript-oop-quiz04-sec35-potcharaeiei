@@ -14,12 +14,12 @@ import { CreateUserDto } from './dto/create-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('test') //P02 
+  @Get('test') //P02
   test(): any[] {
     return this.userService.test();
   }
 
-  @Get() //P03 
+  @Get() //P03
   findAll() {
     return this.userService.findAll();
   }

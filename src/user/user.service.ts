@@ -64,7 +64,6 @@ export class UserService {
     writeFileSync(filePath, JSON.stringify(this.users, null, 2));
 
     return newUser;
-
   }
 
   findAll(): IUser[] {
